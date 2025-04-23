@@ -9,7 +9,7 @@ spring:
     url: ${SPRING_DATASOURCE_URL}
 
 
-spring:
+
   jpa:
     hibernate:
       ddl-auto: update
