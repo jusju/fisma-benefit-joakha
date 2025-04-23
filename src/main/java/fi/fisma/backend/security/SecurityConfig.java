@@ -117,17 +117,18 @@ public class SecurityConfig {
         JWKSource<SecurityContext> jwks = new ImmutableJWKSet<>(new JWKSet(jwk));
         return new NimbusJwtEncoder(jwks);
     }
-    
-    @Bean
+
+        @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("https://benefit.pinkkhub.com", "http://localhost:5173"));
+        configuration.setAllowedOrigins(List.of("https://fisma-benefit-app.github.io", "http://localhost:5173"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
+
     
     private RSAPrivateKey parsePrivateKey(String privateKeyStr) throws Exception {
         String privateKeyPEM = privateKeyStr
