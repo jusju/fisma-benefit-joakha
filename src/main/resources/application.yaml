@@ -9,9 +9,10 @@ spring:
     url: ${SPRING_DATASOURCE_URL}
 
 
-  sql:
-    init:
-      mode: always
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
 
   cloud:
     aws:
