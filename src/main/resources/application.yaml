@@ -9,10 +9,16 @@ spring:
     url: ${SPRING_DATASOURCE_URL}
 
 
+# Tämä on se update
+  #jpa:
+    #hibernate:
+      #ddl-auto: update
 
-  jpa:
-    hibernate:
-      ddl-auto: update
+# Ja tämä on se, joka käynnistää databasen joka kerta alusta
+  sql:
+  init:
+    mode: always
+
 
   cloud:
     aws:
