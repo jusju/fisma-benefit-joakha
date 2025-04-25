@@ -124,7 +124,7 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(List.of("https://fisma-benefit-app.github.io", "http://localhost:5173"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
-        configuration.setExposedHeaders(new ArrayList<>(List.of("Location")));
+        
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
